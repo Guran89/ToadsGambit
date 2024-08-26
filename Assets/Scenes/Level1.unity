@@ -12727,6 +12727,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass2Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 7451032170504117502, guid: 83b023e644c2805458dd96a9e9a8b0b2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7794801750587180612, guid: 83b023e644c2805458dd96a9e9a8b0b2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.56
