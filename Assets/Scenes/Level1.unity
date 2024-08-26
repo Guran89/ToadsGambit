@@ -2606,6 +2606,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ThrashBin1Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 8668820724237392744, guid: 8849b6b7dae2ca74b83d438ae4e01f39, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6711,6 +6715,14 @@ PrefabInstance:
     - target: {fileID: 1996034575610902086, guid: 980ad5b9ae6ffdb46a537ffaa8e0e771, type: 3}
       propertyPath: m_Name
       value: ThrashBoxPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 1996034575610902086, guid: 980ad5b9ae6ffdb46a537ffaa8e0e771, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1996034575610902086, guid: 980ad5b9ae6ffdb46a537ffaa8e0e771, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
