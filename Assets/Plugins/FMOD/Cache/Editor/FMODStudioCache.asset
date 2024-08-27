@@ -15,7 +15,11 @@ MonoBehaviour:
   Path: Assets/Audio/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< Updated upstream
   lastModified: 638602754755070362
+=======
+  lastModified: 638602787012100925
+>>>>>>> Stashed changes
   FileSizes:
   - Name: 
     Value: 754
@@ -69,7 +73,11 @@ MonoBehaviour:
   - {fileID: 1416938990313403820}
   StringsBanks:
   - {fileID: -6487715158303836771}
+<<<<<<< Updated upstream
   cacheTime: 638602754755070362
+=======
+  cacheTime: 638602787012100925
+>>>>>>> Stashed changes
   cacheVersion: 131619
 --- !u!114 &1416938990313403820
 MonoBehaviour:
@@ -86,6 +94,10 @@ MonoBehaviour:
   Path: Assets/Audio/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
+<<<<<<< Updated upstream
   lastModified: 638602754755060333
+=======
+  lastModified: 638602787012089510
+>>>>>>> Stashed changes
   FileSizes: []
   Exists: 1
