@@ -211,6 +211,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: a82f614907f024d24ab247c088c67715, type: 2}
     - target: {fileID: 919132149155446097, guid: 25dbc48ef503d264c97d01386f214fdf, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 919132149155446097, guid: 25dbc48ef503d264c97d01386f214fdf, type: 3}
       propertyPath: m_Name
       value: Fly_NPC_Model_05
       objectReference: {fileID: 0}
