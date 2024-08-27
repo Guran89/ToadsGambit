@@ -4,9 +4,9 @@ using UnityEngine.AI;
 public class EnemyWanderer : MonoBehaviour
 {
     public float wanderRadius = 10f;
-    public float wanderTimer = 5f;
-    public float playerDetectionRadius = 5f;
-    public float fleeDistance = 15f;
+    public float wanderTimer = 2f;
+    public float playerDetectionRadius = 10f;
+    public float fleeDistance = 30f;
     public float fleeSpeed = 8f;
 
     private NavMeshAgent agent;
