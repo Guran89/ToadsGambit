@@ -3808,6 +3808,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fly_NPC_Model_05 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4862836268046948467, guid: 1ef50605a5199c4439346d96a189010a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9b5415cc9d2667a429a8b2e1d2b81397, type: 2}
     - target: {fileID: 5350059712535626425, guid: 1ef50605a5199c4439346d96a189010a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.026773
@@ -7336,6 +7340,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fly_NPC_Model_05 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4862836268046948467, guid: 1ef50605a5199c4439346d96a189010a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9b5415cc9d2667a429a8b2e1d2b81397, type: 2}
     - target: {fileID: 5350059712535626425, guid: 1ef50605a5199c4439346d96a189010a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.0859065
@@ -7455,6 +7463,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fly_NPC_Model_05 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4862836268046948467, guid: 1ef50605a5199c4439346d96a189010a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9b5415cc9d2667a429a8b2e1d2b81397, type: 2}
     - target: {fileID: 5350059712535626425, guid: 1ef50605a5199c4439346d96a189010a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.3316116
@@ -7919,6 +7931,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fly_NPC_Model_05
       objectReference: {fileID: 0}
+    - target: {fileID: 4862836268046948467, guid: 1ef50605a5199c4439346d96a189010a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9b5415cc9d2667a429a8b2e1d2b81397, type: 2}
     - target: {fileID: 5350059712535626425, guid: 1ef50605a5199c4439346d96a189010a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.6503224
@@ -12269,6 +12285,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fly_NPC_Model_05 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4862836268046948467, guid: 1ef50605a5199c4439346d96a189010a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9b5415cc9d2667a429a8b2e1d2b81397, type: 2}
     - target: {fileID: 5350059712535626425, guid: 1ef50605a5199c4439346d96a189010a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.4711764
