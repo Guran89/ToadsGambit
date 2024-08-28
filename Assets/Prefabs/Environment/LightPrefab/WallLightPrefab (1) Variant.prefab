@@ -284,6 +284,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9b5415cc9d2667a429a8b2e1d2b81397, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 2a69344b81f14894b8a9e9a8a38e37cd, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8345ef90e35151e45b63546300bf2f1e, type: 2}
     - target: {fileID: 919132149155446097, guid: 2a69344b81f14894b8a9e9a8a38e37cd, type: 3}
       propertyPath: m_Name
       value: WallLight1_03

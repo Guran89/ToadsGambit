@@ -44,8 +44,8 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.9924528, g: 0.9663983, b: 0.5823637, a: 1}
-  m_Intensity: 0.5
+  m_Color: {r: 0.5514261, g: 0.9622642, b: 0.35857958, a: 1}
+  m_Intensity: 0.3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -306,6 +306,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wanderRadius: 10
   wanderTimer: 5
+  playerDetectionRadius: 10
+  fleeDistance: 30
+  fleeSpeed: 8
 --- !u!195 &5045693047159914233
 NavMeshAgent:
   m_ObjectHideFlags: 0
