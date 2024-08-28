@@ -5486,6 +5486,7 @@ Transform:
   - {fileID: 17070314}
   - {fileID: 2055274438}
   - {fileID: 1332962056}
+  - {fileID: 2147234411}
   m_Father: {fileID: 1128920196}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &723654207
@@ -16343,8 +16344,7 @@ Transform:
   m_LocalPosition: {x: 2.440834, y: 3.7248516, z: -110.000206}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2147234411}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1792510357
@@ -19283,7 +19283,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1770658229}
+    m_TransformParent: {fileID: 721366034}
     m_Modifications:
     - target: {fileID: 3182167752510880077, guid: 13d2fd624742b4af396632368fcd22ad, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -19299,15 +19299,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5651641692709100329, guid: 13d2fd624742b4af396632368fcd22ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.559166
+      value: -1.5805297
       objectReference: {fileID: 0}
     - target: {fileID: 5651641692709100329, guid: 13d2fd624742b4af396632368fcd22ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2248516
+      value: -2.5060945
       objectReference: {fileID: 0}
     - target: {fileID: 5651641692709100329, guid: 13d2fd624742b4af396632368fcd22ad, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.500206
+      value: 13.469292
       objectReference: {fileID: 0}
     - target: {fileID: 5651641692709100329, guid: 13d2fd624742b4af396632368fcd22ad, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19424,6 +19424,10 @@ PrefabInstance:
     - target: {fileID: 1883158114135914039, guid: 9121a5fee0f704fda99a0df7c7719fce, type: 3}
       propertyPath: m_NeverAutoSwitchControlSchemes
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2959809474886889301, guid: 9121a5fee0f704fda99a0df7c7719fce, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4287585963176471692, guid: 9121a5fee0f704fda99a0df7c7719fce, type: 3}
       propertyPath: MoveSpeed
