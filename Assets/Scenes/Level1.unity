@@ -15936,6 +15936,62 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlickeringWallLightPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 4071429021210310675, guid: fc216d3f717f34d4ea76145fa36448bf, type: 3}
+      propertyPath: m_Color.b
+      value: 0.4392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 4071429021210310675, guid: fc216d3f717f34d4ea76145fa36448bf, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 4071429021210310675, guid: fc216d3f717f34d4ea76145fa36448bf, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 4071429021210310675, guid: fc216d3f717f34d4ea76145fa36448bf, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4071429021210310675, guid: fc216d3f717f34d4ea76145fa36448bf, type: 3}
+      propertyPath: m_SpotAngle
+      value: 125.6004
+      objectReference: {fileID: 0}
+    - target: {fileID: 4071429021210310675, guid: fc216d3f717f34d4ea76145fa36448bf, type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 34.37603
+      objectReference: {fileID: 0}
+    - target: {fileID: 4071429021210310675, guid: fc216d3f717f34d4ea76145fa36448bf, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621718940079130462, guid: fc216d3f717f34d4ea76145fa36448bf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.69210625
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621718940079130462, guid: fc216d3f717f34d4ea76145fa36448bf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.6921056
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621718940079130462, guid: fc216d3f717f34d4ea76145fa36448bf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.14487717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621718940079130462, guid: fc216d3f717f34d4ea76145fa36448bf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.14487708
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621718940079130462, guid: fc216d3f717f34d4ea76145fa36448bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 113.645996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621718940079130462, guid: fc216d3f717f34d4ea76145fa36448bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621718940079130462, guid: fc216d3f717f34d4ea76145fa36448bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 5864240310084691758, guid: fc216d3f717f34d4ea76145fa36448bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.247166
