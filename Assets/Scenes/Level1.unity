@@ -10488,7 +10488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 1195084227}
-  range: 10
+  range: 5
   centrePoint: {fileID: 1195084229}
 --- !u!114 &1195084231
 MonoBehaviour:
@@ -10502,6 +10502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d98a877daaff47488408ae8fa0a0acb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 1195084227}
 --- !u!1001 &1205660964
 PrefabInstance:
   m_ObjectHideFlags: 0
