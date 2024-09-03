@@ -32,7 +32,7 @@ public class FlyController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         // Enable flying
-        agent.baseOffset = 1.5f; // Adjust this value to set the fly's height
+        agent.baseOffset = 4.5f; // Adjust this value to set the fly's height
     }
 
     void Update()
