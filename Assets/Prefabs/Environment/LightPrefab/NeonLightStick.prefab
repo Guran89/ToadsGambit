@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 838848328223078673}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.15, z: -0}
+  m_LocalPosition: {x: 0, y: -1.08, z: -0}
   m_LocalScale: {x: 14.674668, y: 1.0498928, z: 1.0498928}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,9 +44,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.30838373, g: 0.8490566, b: 0.7191853, a: 1}
-  m_Intensity: 10
-  m_Range: 8.33
+  m_Color: {r: 0.3135903, g: 0.764151, b: 0.6531433, a: 1}
+  m_Intensity: 1
+  m_Range: 5.15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -189,6 +189,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0fe8f67a331b2684e8bc5fd6c46b29da, type: 3}
       propertyPath: m_Name
       value: NeonLightStick
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0fe8f67a331b2684e8bc5fd6c46b29da, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
