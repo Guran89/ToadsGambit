@@ -7,7 +7,7 @@ public class RatAnimationController : MonoBehaviour
 {
     Animator animator;
     public NavMeshAgent agent;
-    bool isMoving = true;
+    //bool isMoving = true;
 
 
     // Start is called before the first frame update

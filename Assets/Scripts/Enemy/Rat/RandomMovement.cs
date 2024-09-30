@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI; //important
 
-//if you use this code you are contractually obligated to like the YT video
-public class RandomMovement : MonoBehaviour //don't forget to change the script name if you haven't
+public class RandomMovement : MonoBehaviour
 {
     public NavMeshAgent agent;
     public float range; //radius of sphere
