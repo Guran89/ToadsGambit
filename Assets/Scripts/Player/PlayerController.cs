@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public InputAction runAction;
     public Animator animator;
     public Camera mainCamera;
+    public AudioSource audioSource;
 
     public float movementSpeed = 3f;
     public float runModifier = 1.5f;
@@ -16,11 +17,16 @@ public class PlayerController : MonoBehaviour
     private static readonly int IsMovingHash = Animator.StringToHash("IsWalking");
     private static readonly int IsRunningHash = Animator.StringToHash("IsRunning");
 
+    public bool isMoving;
+    public bool isRunning;
+    public bool isCurrentlyMoving;
+
 
     void Start()
     {
         moveAction.Enable();
         runAction.Enable();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -54,6 +60,11 @@ public class PlayerController : MonoBehaviour
         {
             transform.position += currentSpeed * Time.deltaTime * move;
             HandleRotation(move);
+            isCurrentlyMoving = true;
+        }
+        else
+        {
+            isCurrentlyMoving = false;
         }
 
         return move;
@@ -67,13 +78,12 @@ public class PlayerController : MonoBehaviour
 
     void HandleAnimations(Vector3 movement)
     {
-        bool isMoving = movement.magnitude > 0;
+        isMoving = movement.magnitude > 0;
         bool isRunKeyPressed = runAction.ReadValue<float>() > 0;
 
-        bool isRunning = isMoving && isRunKeyPressed;
+        isRunning = isMoving && isRunKeyPressed;
 
         animator.SetBool(IsMovingHash, isMoving);
         animator.SetBool(IsRunningHash, isRunning);
-
     }
 }

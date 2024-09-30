@@ -7,6 +7,7 @@ public class RatAnimationController : MonoBehaviour
 {
     Animator animator;
     public NavMeshAgent agent;
+    public AudioClip clip;
     //bool isMoving = true;
 
 
