@@ -16,7 +16,7 @@ public class FootstepController : MonoBehaviour
         {
             if (Time.time - timeSinceLastFootstep >=walkFootstepSpeed)
             {
-                AudioClip footstepSound = clip[Random.Range(0, clip.Length)];
+                AudioClip footstepSound = clip[Random.Range(0, clip.Length - 2)];
                 audioSource.PlayOneShot(footstepSound);
                 Debug.Log(footstepSound);
 
@@ -27,8 +27,9 @@ public class FootstepController : MonoBehaviour
         {
             if (Time.time - timeSinceLastFootstep >= runFootstepSpeed)
             {
-                AudioClip footstepSound = audioSource.clip;
+                AudioClip footstepSound = clip[Random.Range(2, clip.Length)];
                 audioSource.PlayOneShot(footstepSound);
+                Debug.Log(footstepSound);
 
                 timeSinceLastFootstep = Time.time;
             }
