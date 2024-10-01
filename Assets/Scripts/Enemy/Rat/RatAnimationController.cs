@@ -7,10 +7,9 @@ public class RatAnimationController : MonoBehaviour
 {
     Animator animator;
     public NavMeshAgent agent;
-    //bool isMoving = true;
 
+    public bool isCurrentlyWalking;
 
-    // Start is called before the first frame update
     void Start()
     { 
         animator = GetComponent<Animator>();
@@ -19,18 +18,19 @@ public class RatAnimationController : MonoBehaviour
         bool isWalking = animator.GetBool("isWalking");
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (IsMoving())
         {
             animator.SetBool("isWalking", true);
+            isCurrentlyWalking = true;
         }
 
         if (!IsMoving())
         {
             animator.SetBool("isWalking", false);
             animator.SetBool("isIdle", true);
+            isCurrentlyWalking = false;
         }
     }
 
