@@ -18,7 +18,6 @@ public class FootstepController : MonoBehaviour
             {
                 AudioClip footstepSound = clip[Random.Range(0, clip.Length - 2)];
                 audioSource.PlayOneShot(footstepSound);
-                Debug.Log(footstepSound);
 
                 timeSinceLastFootstep = Time.time;
             }
@@ -29,7 +28,6 @@ public class FootstepController : MonoBehaviour
             {
                 AudioClip footstepSound = clip[Random.Range(2, clip.Length)];
                 audioSource.PlayOneShot(footstepSound);
-                Debug.Log(footstepSound);
 
                 timeSinceLastFootstep = Time.time;
             }
