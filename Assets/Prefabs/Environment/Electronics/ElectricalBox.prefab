@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 08e3fcc30dcc8374d969107ef087106f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.969977
+      value: 2.6626248
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08e3fcc30dcc8374d969107ef087106f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.7172067
+      value: 2.4500008
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08e3fcc30dcc8374d969107ef087106f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -123.87407
+      value: -125.290245
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08e3fcc30dcc8374d969107ef087106f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -51,10 +51,14 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 08e3fcc30dcc8374d969107ef087106f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 394c8b51febfcca468e718c79a179fc0, type: 2}
+      objectReference: {fileID: 2100000, guid: d3aab38c490c50a49abce7fe9d078751, type: 2}
     - target: {fileID: 919132149155446097, guid: 08e3fcc30dcc8374d969107ef087106f, type: 3}
       propertyPath: m_Name
-      value: ElectricalBox3_Mesh
+      value: ElectricalBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 08e3fcc30dcc8374d969107ef087106f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
