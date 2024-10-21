@@ -21520,13 +21520,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1178211974}
     m_Modifications:
+    - target: {fileID: 1965063158268608207, guid: e09c668f07a3cfc4ab7c78960971e870, type: 3}
+      propertyPath: range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965063158268608207, guid: e09c668f07a3cfc4ab7c78960971e870, type: 3}
+      propertyPath: patrolRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965063158268608207, guid: e09c668f07a3cfc4ab7c78960971e870, type: 3}
+      propertyPath: detectionRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6040831124603323261, guid: e09c668f07a3cfc4ab7c78960971e870, type: 3}
       propertyPath: m_Name
       value: Rat_NPC_Model_02
       objectReference: {fileID: 0}
     - target: {fileID: 6385690075311282631, guid: e09c668f07a3cfc4ab7c78960971e870, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -34.2
+      value: -11.29
       objectReference: {fileID: 0}
     - target: {fileID: 6385690075311282631, guid: e09c668f07a3cfc4ab7c78960971e870, type: 3}
       propertyPath: m_LocalPosition.y
@@ -21534,7 +21546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6385690075311282631, guid: e09c668f07a3cfc4ab7c78960971e870, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.1
+      value: 6.01
       objectReference: {fileID: 0}
     - target: {fileID: 6385690075311282631, guid: e09c668f07a3cfc4ab7c78960971e870, type: 3}
       propertyPath: m_LocalRotation.w

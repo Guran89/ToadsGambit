@@ -1,51 +1,112 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI; //important
+using UnityEngine.AI;
+using System.Collections;
 
-public class RandomMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
-    public NavMeshAgent agent;
-    public float range; //radius of sphere
+    [SerializeField] private float patrolRange = 10f;
+    [SerializeField] private float pauseDuration = 2f;
+    [SerializeField] private Transform centrePoint;
+    [SerializeField] private float detectionRange = 5f;
+    [SerializeField] private LayerMask playerLayer;
 
-    public Transform centrePoint; //centre of the area the agent wants to move around in
-    //instead of centrePoint you can set it as the transform of the agent if you don't care about a specific area
+    private NavMeshAgent agent;
+    private Transform player;
+    private bool isFollowingPlayer;
+    private Coroutine currentRoutine;
 
-    void Start()
+    private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        if (player == null)
+        {
+            Debug.LogError("Player not found. Make sure the player has the 'Player' tag.");
+        }
+        currentRoutine = StartCoroutine(PatrolRoutine());
     }
 
-
-    void Update()
+    private void Update()
     {
-        if (agent.remainingDistance <= agent.stoppingDistance) //done with path
+        bool canSeePlayer = CanSeePlayer();
+
+        // Visualize player detection
+        Debug.DrawLine(transform.position, player.position, canSeePlayer ? Color.red : Color.green);
+
+        // Debug info
+        Debug.Log($"Can see player: {canSeePlayer}, Is following: {isFollowingPlayer}, Current routine: {(isFollowingPlayer ? "Following" : "Patrolling")}");
+
+        // Check if we need to switch behaviors
+        if (canSeePlayer && !isFollowingPlayer)
         {
-            Vector3 point;
-            if (RandomPoint(centrePoint.position, range, out point)) //pass in our centre point and radius of area
+            SwitchToFollowing();
+        }
+        else if (!canSeePlayer && isFollowingPlayer)
+        {
+            SwitchToPatrolling();
+        }
+    }
+
+    private bool CanSeePlayer()
+    {
+        return Vector3.Distance(transform.position, player.position) <= detectionRange;
+    }
+
+    private void SwitchToFollowing()
+    {
+        Debug.Log("Switching to following behavior");
+        if (currentRoutine != null)
+        {
+            StopCoroutine(currentRoutine);
+        }
+        isFollowingPlayer = true;
+        currentRoutine = StartCoroutine(FollowRoutine());
+    }
+
+    private void SwitchToPatrolling()
+    {
+        Debug.Log("Switching to patrolling behavior");
+        if (currentRoutine != null)
+        {
+            StopCoroutine(currentRoutine);
+        }
+        isFollowingPlayer = false;
+        currentRoutine = StartCoroutine(PatrolRoutine());
+    }
+
+    private IEnumerator FollowRoutine()
+    {
+        while (isFollowingPlayer)
+        {
+            Debug.Log("Setting destination to player");
+            agent.SetDestination(player.position);
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    private IEnumerator PatrolRoutine()
+    {
+        while (!isFollowingPlayer)
+        {
+            if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
             {
-                Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); //so you can see with gizmos
-                agent.SetDestination(point);
+                Vector3 randomPoint = centrePoint.position + Random.insideUnitSphere * patrolRange;
+                if (NavMesh.SamplePosition(randomPoint, out NavMeshHit hit, 1.0f, NavMesh.AllAreas))
+                {
+                    Debug.Log("Setting new patrol destination");
+                    agent.SetDestination(hit.position);
+                    yield return new WaitForSeconds(pauseDuration);
+                }
             }
+            yield return null;
         }
-
     }
-    bool RandomPoint(Vector3 center, float range, out Vector3 result)
+
+    private void OnDrawGizmosSelected()
     {
-
-        Vector3 randomPoint = center + Random.insideUnitSphere * range; //random point in a sphere 
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas)) //documentation: https://docs.unity3d.com/ScriptReference/AI.NavMesh.SamplePosition.html
-        {
-            //the 1.0f is the max distance from the random point to a point on the navmesh, might want to increase if range is big
-            //or add a for loop like in the documentation
-            result = hit.position;
-            return true;
-        }
-
-        result = Vector3.zero;
-        return false;
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, patrolRange);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, detectionRange);
     }
-
-
 }
