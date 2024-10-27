@@ -1806,16 +1806,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6489a43ae9dff1d4d87455b78e66b8df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveAction:
+  _moveAction:
     m_Name: Move
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 9f139fe4-591d-4159-8bb9-66d03b1a84fb
+    m_Id: 398432fe-cc43-4fb6-bf3a-82554fe053a1
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
-    - m_Name: WASD
-      m_Id: 5fe27481-cee0-49bb-8543-e88ddbc69a53
+    - m_Name: 2D Vector
+      m_Id: 6caca4e0-02f5-4359-a634-ddf95fbbfe50
       m_Path: 2DVector
       m_Interactions: 
       m_Processors: 
@@ -1823,7 +1823,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 4
     - m_Name: up
-      m_Id: 3bda31ef-1c38-4537-9bcd-74642bc961d5
+      m_Id: e3cab5f4-dcad-44b9-8c7c-ebeaf2ca87e9
       m_Path: <Keyboard>/w
       m_Interactions: 
       m_Processors: 
@@ -1831,7 +1831,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     - m_Name: down
-      m_Id: f42ddd7e-12f1-4a67-96e5-eb846580084e
+      m_Id: dd1066b3-317f-4608-b9db-ce88ca121e37
       m_Path: <Keyboard>/s
       m_Interactions: 
       m_Processors: 
@@ -1839,7 +1839,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     - m_Name: left
-      m_Id: c6b178f3-837e-4ee9-926e-f2c1f7868a69
+      m_Id: d8a9c1aa-f299-49b0-aeba-500dd9548ec1
       m_Path: <Keyboard>/a
       m_Interactions: 
       m_Processors: 
@@ -1847,7 +1847,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     - m_Name: right
-      m_Id: 8cd5c1d0-d3e3-489f-a22f-2fbb8683bd72
+      m_Id: 2ef6e960-02a8-4398-bad9-7f2d5c1dbf5d
       m_Path: <Keyboard>/d
       m_Interactions: 
       m_Processors: 
@@ -1855,32 +1855,47 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     m_Flags: 0
-  runAction:
+  _runAction:
     m_Name: Run
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 4fd4a760-d4ca-4e77-ae1b-c00961743cb8
+    m_Id: 7123df80-8968-48e4-bf01-f0bcd3c5db07
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: da608e61-7b13-4a67-a13f-29200cf0642d
-      m_Path: <Keyboard>/shift
+    - m_Name: 1D Axis
+      m_Id: 00a3d5ed-1886-4c2b-a9d5-94ac64c76b37
+      m_Path: 1DAxis
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Run
-      m_Flags: 0
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 83470c42-614a-4ea9-a659-d1056efaf1c0
+      m_Path: 
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Run
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 2dd7efbd-9a21-4664-842c-9b891eb90dd9
+      m_Path: <Keyboard>/leftShift
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Run
+      m_Flags: 8
     m_Flags: 0
-  animator: {fileID: 4425479873456360421}
-  mainCamera: {fileID: 0}
-  audioSource: {fileID: 0}
-  movementSpeed: 3
-  runModifier: 1.5
-  rotationSpeed: 720
-  isMoving: 0
-  isRunning: 0
-  isCurrentlyMoving: 0
+  _animator: {fileID: 4425479873456360421}
+  _mainCamera: {fileID: 0}
+  _audioSource: {fileID: 1637780889471722561}
+  _movementSpeed: 3
+  _runModifier: 1.5
+  _rotationSpeed: 720
+  _isMoving: 0
+  _isRunning: 0
 --- !u!95 &4425479873456360421
 Animator:
   serializedVersion: 5
@@ -1964,15 +1979,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695e95f94a40f55489300f7c3c5b04ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 8931621642046915648}
-  audioSource: {fileID: 1637780889471722561}
-  clip:
+  _controller: {fileID: 8931621642046915648}
+  _audioSource: {fileID: 1637780889471722561}
+  _clip:
   - {fileID: 8300000, guid: 59738b0afb2470742ad7b02dadd5fc42, type: 3}
   - {fileID: 8300000, guid: 3966f43b15dcf514389c5b9ae27fac58, type: 3}
   - {fileID: 8300000, guid: 28eb99bad3d904b4fbb67a89754a9c8b, type: 3}
   - {fileID: 8300000, guid: 8f0777726a11c45469c6618747952d73, type: 3}
-  walkFootstepSpeed: 0.5
-  runFootstepSpeed: 0.35
+  _walkFootstepSpeed: 0.5
+  _runFootstepSpeed: 0.35
 --- !u!82 &1637780889471722561
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2627,11 +2642,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695e95f94a40f55489300f7c3c5b04ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  audioSource: {fileID: 0}
-  clip: []
-  walkFootstepSpeed: 0.5
-  runFootstepSpeed: 0.35
+  _controller: {fileID: 0}
+  _audioSource: {fileID: 0}
+  _clip: []
+  _walkFootstepSpeed: 0.5
+  _runFootstepSpeed: 0.35
 --- !u!1 &8483381899087105507
 GameObject:
   m_ObjectHideFlags: 0

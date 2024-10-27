@@ -1,35 +1,36 @@
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
+
 public class FootstepController : MonoBehaviour
 {
-    public PlayerController controller;
-    public AudioSource audioSource;
-    public AudioClip[] clip;
+    [FormerlySerializedAs("controller")] public PlayerController _controller;
+    [FormerlySerializedAs("audioSource")] public AudioSource _audioSource;
+    [FormerlySerializedAs("clip")] public AudioClip[] _clip;
 
-    public float walkFootstepSpeed = 0.5f;
-    public float runFootstepSpeed = 0.35f;
-    private float timeSinceLastFootstep;
+    [FormerlySerializedAs("walkFootstepSpeed")] public float _walkFootstepSpeed = 0.5f;
+    [FormerlySerializedAs("runFootstepSpeed")] public float _runFootstepSpeed = 0.35f;
+    private float _timeSinceLastFootstep;
 
     private void Update()
     {
-        if (controller.isMoving && !controller.isRunning)
+        if (_controller._isMoving && !_controller._isRunning)
         {
-            if (Time.time - timeSinceLastFootstep >=walkFootstepSpeed)
+            if (Time.time - _timeSinceLastFootstep >=_walkFootstepSpeed)
             {
-                AudioClip footstepSound = clip[Random.Range(0, clip.Length - 2)];
-                audioSource.PlayOneShot(footstepSound);
+                AudioClip footstepSound = _clip[Random.Range(0, _clip.Length - 2)];
+                _audioSource.PlayOneShot(footstepSound);
 
-                timeSinceLastFootstep = Time.time;
+                _timeSinceLastFootstep = Time.time;
             }
         }
-        if (controller.isRunning && controller.isMoving)
+        if (_controller._isRunning && _controller._isMoving)
         {
-            if (Time.time - timeSinceLastFootstep >= runFootstepSpeed)
+            if (Time.time - _timeSinceLastFootstep >= _runFootstepSpeed)
             {
-                AudioClip footstepSound = clip[Random.Range(2, clip.Length)];
-                audioSource.PlayOneShot(footstepSound);
+                AudioClip footstepSound = _clip[Random.Range(2, _clip.Length)];
+                _audioSource.PlayOneShot(footstepSound);
 
-                timeSinceLastFootstep = Time.time;
+                _timeSinceLastFootstep = Time.time;
             }
         }
     }

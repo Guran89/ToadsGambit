@@ -3,17 +3,18 @@ using UnityEngine.AI;
 
 public class FlyController : MonoBehaviour
 {
-    public float wanderRadius = 10f;
-    public float wanderTimer = 5f;
-    public float playerDetectionRadius = 5f;
-    public float fleeDistance = 15f;
-    public float fleeSpeed = 8f;
-    public float normalSpeed = 3f;
+    private static readonly int IsFlying = Animator.StringToHash("isFlying");
+    [SerializeField] private float _wanderRadius = 10f;
+    [SerializeField] private float _wanderTimer = 5f;
+    [SerializeField] private float _playerDetectionRadius = 5f;
+    [SerializeField] private float _fleeDistance = 15f;
+    [SerializeField] private float _fleeSpeed = 8f;
+    [SerializeField] private float _normalSpeed = 3f;
 
-    private NavMeshAgent agent;
-    private Animator animator;
-    private float timer;
-    private Transform player;
+    private NavMeshAgent _agent;
+    private Animator _animator;
+    private float _timer;
+    private Transform _player;
 
     private enum FlyState
     {
@@ -22,24 +23,24 @@ public class FlyController : MonoBehaviour
         Fleeing
     }
 
-    private FlyState currentState = FlyState.Idle;
+    private FlyState _currentState = FlyState.Idle;
 
-    void Start()
+    private void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
-        timer = wanderTimer;
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        _agent = GetComponent<NavMeshAgent>();
+        _animator = GetComponent<Animator>();
+        _timer = _wanderTimer;
+        _player = GameObject.FindGameObjectWithTag("Player").transform;
 
         // Enable flying
-        agent.baseOffset = 4.5f; // Adjust this value to set the fly's height
+        _agent.baseOffset = 4.5f; // Adjust this value to set the fly's height
     }
 
-    void Update()
+    private void Update()
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        float distanceToPlayer = Vector3.Distance(transform.position, _player.position);
 
-        if (distanceToPlayer <= playerDetectionRadius)
+        if (distanceToPlayer <= _playerDetectionRadius)
         {
             FleeFromPlayer();
         }
@@ -51,60 +52,56 @@ public class FlyController : MonoBehaviour
         UpdateAnimation();
     }
 
-    void Wander()
+    private void Wander()
     {
-        timer += Time.deltaTime;
+        _timer += Time.deltaTime;
 
-        if (timer >= wanderTimer)
+        if (_timer >= _wanderTimer)
         {
-            Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
-            agent.speed = normalSpeed;
-            agent.SetDestination(newPos);
-            timer = 0;
-            currentState = FlyState.Flying;
+            Vector3 newPos = RandomNavSphere(transform.position, _wanderRadius, -1);
+            _agent.speed = _normalSpeed;
+            _agent.SetDestination(newPos);
+            _timer = 0;
+            _currentState = FlyState.Flying;
         }
 
-        if (agent.remainingDistance < 0.1f)
+        if (_agent.remainingDistance < 0.1f)
         {
-            currentState = FlyState.Idle;
+            _currentState = FlyState.Idle;
         }
     }
 
-    void FleeFromPlayer()
+    private void FleeFromPlayer()
     {
-        Vector3 fleeDirection = transform.position - player.position;
-        Vector3 newPos = transform.position + fleeDirection.normalized * fleeDistance;
+        Vector3 fleeDirection = transform.position - _player.position;
+        Vector3 newPos = transform.position + fleeDirection.normalized * _fleeDistance;
 
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(newPos, out hit, fleeDistance, NavMesh.AllAreas))
-        {
-            agent.speed = fleeSpeed;
-            agent.SetDestination(hit.position);
-            currentState = FlyState.Fleeing;
-        }
+        if (!NavMesh.SamplePosition(newPos, out var hit, _fleeDistance, NavMesh.AllAreas)) return;
+        _agent.speed = _fleeSpeed;
+        _agent.SetDestination(hit.position);
+        _currentState = FlyState.Fleeing;
     }
 
-    Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
+    private static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
     {
         Vector3 randDirection = Random.insideUnitSphere * dist;
         randDirection += origin;
 
-        NavMeshHit navHit;
-        NavMesh.SamplePosition(randDirection, out navHit, dist, layermask);
+        NavMesh.SamplePosition(randDirection, out var navHit, dist, layermask);
 
         return navHit.position;
     }
 
-    void UpdateAnimation()
+    private void UpdateAnimation()
     {
-        switch (currentState)
+        switch (_currentState)
         {
             case FlyState.Idle:
-                animator.SetBool("isFlying", false);
+                _animator.SetBool(IsFlying, false);
                 break;
             case FlyState.Flying:
             case FlyState.Fleeing:
-                animator.SetBool("isFlying", true);
+                _animator.SetBool(IsFlying, true);
                 break;
         }
     }

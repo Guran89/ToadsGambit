@@ -1,25 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class RatAudioController : MonoBehaviour
 {
-    public AudioSource audioSource;
-    public RatAnimationController ratAnimationController;
+    [FormerlySerializedAs("audioSource")] public AudioSource _audioSource;
+    [FormerlySerializedAs("ratAnimationController")] public RatAnimationController _ratAnimationController;
 
-    public float footstepSpeed = 0.3f;
-    private float timeSinceLastFootstep;
+    [FormerlySerializedAs("footstepSpeed")] public float _footstepSpeed = 0.3f;
+    private float _timeSinceLastFootstep;
 
     private void Update()
     {
-        if (ratAnimationController.isCurrentlyWalking)
+        if (_ratAnimationController._isCurrentlyWalking)
         {
-            if (Time.time - timeSinceLastFootstep >= footstepSpeed)
+            if (Time.time - _timeSinceLastFootstep >= _footstepSpeed)
             {
-                AudioClip footstepSound = audioSource.clip;
-                audioSource.PlayOneShot(footstepSound);
+                AudioClip footstepSound = _audioSource.clip;
+                _audioSource.PlayOneShot(footstepSound);
 
-                timeSinceLastFootstep = Time.time;
+                _timeSinceLastFootstep = Time.time;
             }
         }
     }

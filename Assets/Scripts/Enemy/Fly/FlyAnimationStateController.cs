@@ -1,21 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FlyAnimationStateController : MonoBehaviour
 {
-    Animator animator;
+    private static readonly int IsFlying = Animator.StringToHash("isFlying");
+
+    private Animator _animator;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        animator = GetComponent<Animator>();
-        bool isFlying = animator.GetBool("isFlying");
-        
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        animator.SetBool("isFlying", true);
+        _animator.SetBool(IsFlying, true);
     }
 }

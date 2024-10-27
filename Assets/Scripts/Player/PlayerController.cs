@@ -1,46 +1,43 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public InputAction moveAction;
-    public InputAction runAction;
-    public Animator animator;
-    public Camera mainCamera;
-    public AudioSource audioSource;
+    [SerializeField] private InputAction _moveAction;
+    [SerializeField] private InputAction _runAction;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private Camera _mainCamera;
+    //[SerializeField] private AudioSource _audioSource;
 
-    public float movementSpeed = 3f;
-    public float runModifier = 1.5f;
-    public float rotationSpeed = 720f;
+    [SerializeField] private float _movementSpeed = 3f;
+    [SerializeField] private float _runModifier = 1.5f;
+    [SerializeField] private float _rotationSpeed = 720f;
 
     private static readonly int IsMovingHash = Animator.StringToHash("IsWalking");
     private static readonly int IsRunningHash = Animator.StringToHash("IsRunning");
 
-    public bool isMoving;
-    public bool isRunning;
-    public bool isCurrentlyMoving;
+    public bool _isMoving;
+    public bool _isRunning;
 
-
-    void Start()
+    private void Start()
     {
-        moveAction.Enable();
-        runAction.Enable();
-        audioSource = GetComponent<AudioSource>();
+        _moveAction.Enable();
+        _runAction.Enable();
+        //_audioSource = GetComponent<AudioSource>();
     }
 
-    void Update()
+    private void Update()
     {
         Vector3 movement = HandleMovement();
         HandleAnimations(movement);
     }
 
-    Vector3 HandleMovement()
+    private Vector3 HandleMovement()
     {
-        Vector2 input = moveAction.ReadValue<Vector2>();
+        Vector2 input = _moveAction.ReadValue<Vector2>();
 
-        Vector3 cameraForward = mainCamera.transform.forward;
-        Vector3 cameraRight = mainCamera.transform.right;
+        Vector3 cameraForward = _mainCamera.transform.forward;
+        Vector3 cameraRight = _mainCamera.transform.right;
 
         cameraForward.y = 0;
         cameraRight.y = 0;
@@ -49,41 +46,36 @@ public class PlayerController : MonoBehaviour
 
         Vector3 move = (cameraRight * input.x + cameraForward * input.y).normalized;
 
-        float currentSpeed = movementSpeed;
+        float currentSpeed = _movementSpeed;
 
-        if (runAction.ReadValue<float>() > 0)
+        if (_runAction.ReadValue<float>() > 0)
         {
-            currentSpeed *= runModifier;
+            currentSpeed *= _runModifier;
         }
 
         if (move != Vector3.zero)
         {
             transform.position += currentSpeed * Time.deltaTime * move;
             HandleRotation(move);
-            isCurrentlyMoving = true;
-        }
-        else
-        {
-            isCurrentlyMoving = false;
         }
 
         return move;
     }
 
-    void HandleRotation(Vector3 movement)
+    private void HandleRotation(Vector3 movement)
     {
         Quaternion targetRotation = Quaternion.LookRotation(movement);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
     }
 
-    void HandleAnimations(Vector3 movement)
+    private void HandleAnimations(Vector3 movement)
     {
-        isMoving = movement.magnitude > 0;
-        bool isRunKeyPressed = runAction.ReadValue<float>() > 0;
+        _isMoving = movement.magnitude > 0;
+        bool isRunKeyPressed = _runAction.ReadValue<float>() > 0;
 
-        isRunning = isMoving && isRunKeyPressed;
+        _isRunning = _isMoving && isRunKeyPressed;
 
-        animator.SetBool(IsMovingHash, isMoving);
-        animator.SetBool(IsRunningHash, isRunning);
+        _animator.SetBool(IsMovingHash, _isMoving);
+        _animator.SetBool(IsRunningHash, _isRunning);
     }
 }

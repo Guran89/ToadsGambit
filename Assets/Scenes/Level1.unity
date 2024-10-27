@@ -771,6 +771,34 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 963194227}
+    - target: {fileID: 8931621642046915648, guid: 9121a5fee0f704fda99a0df7c7719fce, type: 3}
+      propertyPath: _mainCamera
+      value: 
+      objectReference: {fileID: 963194227}
+    - target: {fileID: 8931621642046915648, guid: 9121a5fee0f704fda99a0df7c7719fce, type: 3}
+      propertyPath: _runAction.m_SingletonActionBindings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931621642046915648, guid: 9121a5fee0f704fda99a0df7c7719fce, type: 3}
+      propertyPath: _runAction.m_SingletonActionBindings.Array.data[1].m_Id
+      value: 2dd7efbd-9a21-4664-842c-9b891eb90dd9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931621642046915648, guid: 9121a5fee0f704fda99a0df7c7719fce, type: 3}
+      propertyPath: _runAction.m_SingletonActionBindings.Array.data[0].m_Name
+      value: Run
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931621642046915648, guid: 9121a5fee0f704fda99a0df7c7719fce, type: 3}
+      propertyPath: _runAction.m_SingletonActionBindings.Array.data[1].m_Name
+      value: positive
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931621642046915648, guid: 9121a5fee0f704fda99a0df7c7719fce, type: 3}
+      propertyPath: _runAction.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Keyboard>/leftShift
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931621642046915648, guid: 9121a5fee0f704fda99a0df7c7719fce, type: 3}
+      propertyPath: _moveAction.m_SingletonActionBindings.Array.data[0].m_Name
+      value: WASD
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19699,12 +19727,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2584399e7828bf74b855801e41092009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wanderRadius: 10
-  wanderTimer: 5
-  playerDetectionRadius: 5
-  fleeDistance: 4
-  fleeSpeed: 8
-  normalSpeed: 3
+  _wanderRadius: 10
+  _wanderTimer: 5
+  _playerDetectionRadius: 5
+  _fleeDistance: 4
+  _fleeSpeed: 8
+  _normalSpeed: 3
 --- !u!1 &1128920195
 GameObject:
   m_ObjectHideFlags: 0
@@ -21529,7 +21557,15 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1965063158268608207, guid: e09c668f07a3cfc4ab7c78960971e870, type: 3}
+      propertyPath: _patrolRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965063158268608207, guid: e09c668f07a3cfc4ab7c78960971e870, type: 3}
       propertyPath: detectionRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965063158268608207, guid: e09c668f07a3cfc4ab7c78960971e870, type: 3}
+      propertyPath: _detectionRange
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6040831124603323261, guid: e09c668f07a3cfc4ab7c78960971e870, type: 3}

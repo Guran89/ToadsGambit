@@ -1,41 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class RatAnimationController : MonoBehaviour
 {
-    Animator animator;
-    public NavMeshAgent agent;
+    private static readonly int IsIdle = Animator.StringToHash("isIdle");
+    private static readonly int IsWalking = Animator.StringToHash("isWalking");
+    private Animator _animator;
+    public NavMeshAgent _agent;
 
-    public bool isCurrentlyWalking;
+    public bool _isCurrentlyWalking;
 
-    void Start()
+    private void Start()
     { 
-        animator = GetComponent<Animator>();
-        agent = GetComponent<NavMeshAgent>();
-        bool isIdle = animator.GetBool("isIdle");
-        bool isWalking = animator.GetBool("isWalking");
+        _animator = GetComponent<Animator>();
+        _agent = GetComponent<NavMeshAgent>();
     }
 
-    void Update()
+    private void Update()
     {
         if (IsMoving())
         {
-            animator.SetBool("isWalking", true);
-            isCurrentlyWalking = true;
+            _animator.SetBool(IsWalking, true);
+            _isCurrentlyWalking = true;
         }
 
         if (!IsMoving())
         {
-            animator.SetBool("isWalking", false);
-            animator.SetBool("isIdle", true);
-            isCurrentlyWalking = false;
+            _animator.SetBool(IsWalking, false);
+            _animator.SetBool(IsIdle, true);
+            _isCurrentlyWalking = false;
         }
     }
 
-    bool IsMoving()
+    private bool IsMoving()
     {
-        return agent.velocity.magnitude > 0.1f;
+        return _agent.velocity.magnitude > 0.1f;
     }
 }
